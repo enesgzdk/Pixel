@@ -1,23 +1,31 @@
 name: Pixel Boyama
 
 on:
-  workflow_dispatch:  # manuel tetikleme
+  workflow_dispatch:  # manuel tetikleme için
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
+      - name: Repo'yu klonla
+        uses: actions/checkout@v3
+
+      - name: Python kur
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
-      - name: Install dependencies
-        run: pip install pillow numpy
-      - name: Run pixel paint
-        run: python pixel_paint.py
-      - name: Upload output
+
+      - name: Bağımlılıkları yükle
+        run: pip install -r requirements.txt
+
+      - name: Scripti çalıştır
+        run: python ./pixel_paint.py
+
+      - name: Çıktıyı yükle
         uses: actions/upload-artifact@v4
         with:
           name: pixel-output
-          path: pixel_art_numbered.png
+          path: |
+            pixel_art_numbered.png
+            renk_tablosu.txt
+            color_guide.png
