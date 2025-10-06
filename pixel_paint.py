@@ -3,7 +3,7 @@ import numpy as np
 import os, sys
 
 # ---------------- AYARLAR ----------------
-input_image = "ceyda.jpg"        # Fotoğraf dosyası adı (root dizinde olmalı)
+input_image = "2.jpeg"        # Fotoğraf dosyası adı (root dizinde olmalı)
 output_image = "pixel_art_numbered.png"
 pixel_size = 50                  # Kaç piksele küçültülsün
 color_count = 20                 # Kaç renk olsun
