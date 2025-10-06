@@ -1,0 +1,23 @@
+name: Pixel Boyama
+
+on:
+  workflow_dispatch:  # manuel tetikleme
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: pip install pillow numpy
+      - name: Run pixel paint
+        run: python pixel_paint.py
+      - name: Upload output
+        uses: actions/upload-artifact@v3
+        with:
+          name: pixel-output
+          path: pixel_art_numbered.png
