@@ -3,7 +3,7 @@ import numpy as np
 import os, sys
 
 # ---------------- AYARLAR ----------------
-input_image = "image.JPG"      # Fotoğraf dosyası adı (aynı klasörde olmalı)
+input_image = "2.jpeg"      # Fotoğraf dosyası adı (aynı klasörde olmalı)
 output_image = "pixel_art_numbered.png"
 pixel_size = 50                         # Kaç piksele küçültülsün (örn. 50x50)
 color_count = 20                        # Kaç farklı renk kullanılacak
