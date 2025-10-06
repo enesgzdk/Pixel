@@ -3,7 +3,7 @@ import numpy as np
 import os, sys
 
 # ---------------- AYARLAR ----------------
-input_image = "2.jpeg"        # Fotoğraf dosyası adı (root dizinde olmalı)
+input_image = "ceyda.jpg"        # Fotoğraf dosyası adı (root dizinde olmalı)
 output_image = "pixel_art_numbered.png"
 pixel_size = 50                  # Kaç piksele küçültülsün
 color_count = 20                 # Kaç renk olsun
@@ -75,7 +75,8 @@ print(f"✅ Çıktı oluşturuldu: {output_image}")
 
 # ------------------ RENK REHBERİ ------------------
 # TXT olarak
-with open("renk_tablosu.txt", "w") as f:
+txt_path = os.path.join(os.getcwd(), "renk_tablosu.txt")
+with open(txt_path, "w") as f:
     for idx, color in color_map.items():
         hex_color = "#{:02x}{:02x}{:02x}".format(*color)
         f.write(f"{idx}: {hex_color}\n")
